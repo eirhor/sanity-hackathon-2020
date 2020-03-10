@@ -5,12 +5,20 @@ export interface ICategoryItem {
   id: string;
   title: string;
   description: string;
+  mainImage: {
+    asset: {
+      url: string;
+    };
+  };
+  mainImageAlt: string;
 }
 
 export const categoryQueryObject = `{
   "id": _id,
   title,
-  description
+  description,
+  "mainImage": mainImage{asset->{url}},
+  mainImageAlt,
 }`;
 
 export const useCategories = () => {
@@ -32,6 +40,8 @@ export const useCategory = (id?: string) => {
     title: "",
     id: id || "",
     description: "",
+    mainImage: { asset: {url: ""}},
+    mainImageAlt: "",
   });
 
   useEffect(() => {

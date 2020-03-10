@@ -9,12 +9,13 @@ interface IPostPartialProps extends IPostItem {
 export const PostPartial: React.FC<IPostPartialProps> = ({
   title,
   id,
-  mainImage
+  mainImage,
+  mainImageAlt
 }: IPostPartialProps) => (
     <Link to={`/posts/${id}`}>
         <MediaObject stackForSmall={true}>
             <MediaObjectSection isMiddle={true}>
-                <Thumbnail src={mainImage.asset.url} alt={title} />
+                <Thumbnail src={mainImage.asset.url} alt={mainImageAlt} />
             </MediaObjectSection>
             <MediaObjectSection isMain={true}>
                 <h4>{title}</h4>
