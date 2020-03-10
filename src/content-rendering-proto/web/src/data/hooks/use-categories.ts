@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 export interface ICategoryItem {
   id: string;
   title: string;
+  description: string;
 }
 
 export const categoryQueryObject = `{
   "id": _id,
-  title
+  title,
+  description
 }`;
 
 export const useCategories = () => {
@@ -28,7 +30,8 @@ export const useCategory = (id?: string) => {
   const query = `*[_id == "${id}"]${categoryQueryObject}`;
   const [category, setCategory] = useState<ICategoryItem>({
     title: "",
-    id: id || ""
+    id: id || "",
+    description: "",
   });
 
   useEffect(() => {

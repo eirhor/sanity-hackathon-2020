@@ -16,6 +16,7 @@ export const Category: React.FC<ICategoryProps> = (props: ICategoryProps) => {
     <div>
       <h1>{category.title}</h1>
       <h2>Posts</h2>
+        <p>{category.description}</p>
       <Grid upOnSmall={1} upOnMedium={2}>
         {posts.map((p, i) => (
           <Cell key={i}>
