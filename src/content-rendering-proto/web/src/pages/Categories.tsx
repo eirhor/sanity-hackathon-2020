@@ -16,9 +16,7 @@ export const Categories: React.FC<ICategoriesProps> = (
       <h1>Categories</h1>
       <Row tag="ul" rowSettings={{small: 1,medium: 2, large: 4}}>
         {categories.map((c, i) => (
-          <Col key={i}>
-            <CategoryPartial {...c} />
-          </Col>
+            <CategoryPartial {...c} key={i}/>
         ))}
       </Row>
     </div>
