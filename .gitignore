@@ -361,6 +361,10 @@ MigrationBackup/
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/**/vcs.xml
+.idea/**/sanity-hackathon-2020.iml
+.idea/**/modules.xml
+.idea/**/misc.xml
 
 # Generated files
 .idea/**/contentModel.xml
