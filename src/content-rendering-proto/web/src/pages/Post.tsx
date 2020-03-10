@@ -15,7 +15,7 @@ export const Post: React.FC<IPostProps> = (props: IPostProps) => {
   return (
     <div className={"post"}>
       <h1>Post - {post.title}</h1>
-      <Thumbnail src={post.mainImage.asset.url} alt={post.title} />
+      <Thumbnail src={post.mainImage.asset.url} alt={post.mainImageAlt} />
       <ContentRenderer content={post.content}/>
       <h2>Categories</h2>
       <Menu isVertical={true}>

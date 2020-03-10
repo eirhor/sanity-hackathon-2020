@@ -11,6 +11,7 @@ export interface IPostItem {
       url: string;
     };
   };
+  mainImageAlt: string;
   author: IAuthorItem;
   categories: ICategoryItem[];
   content: any[];
@@ -21,6 +22,7 @@ export const postsQueryObject = `{
   "type": _type,
   title,
   "mainImage": mainImage{asset->{url}},
+  mainImageAlt,
   "author": author->${authorQueryObject},
   "categories": categories[]->${categoryQueryObject},
   "content": body[]{
@@ -48,6 +50,7 @@ export const usePost = (postId?: string) => {
         url: ""
       }
     },
+    mainImageAlt: "",
     author: {
       id: "",
       name: "",
