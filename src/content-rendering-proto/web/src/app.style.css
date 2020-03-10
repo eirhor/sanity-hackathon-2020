@@ -9,3 +9,23 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.categories ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.categories .col {
+    border: thin solid lightblue;
+    max-width: 15em;
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+    padding: .5em;
+    margin-left: 0.5em;
+    align-items: space-between;
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+}

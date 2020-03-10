@@ -9,6 +9,7 @@ import { Author } from "./pages/Author";
 import { Authors } from "./pages/Authors";
 import { useNavigation } from "./data/hooks/use-navigation";
 import { NavigationPartial } from "./partials/NavigationPartial";
+import {Container, ContainerItem} from 'geta-core';
 
 import './app.style.css';
 
@@ -18,15 +19,17 @@ const App: React.FC = () => {
   return (
     <div className={'app'}>
       <Router>
-          <ul className="navigation">
+          <Container>
             {navigationItems
                 .sort((a, b) => {
                   return a.order - b.order;
                 })
                 .map((n, i) => (
-                    <NavigationPartial key={i} {...n} />
+                    <ContainerItem key={i}>
+                      <NavigationPartial key={i} {...n} />
+                    </ContainerItem>
                 ))}
-          </ul>
+          </Container>
           <Switch>
             <Route path={`/categories/:categoryId`}>
               <Category />

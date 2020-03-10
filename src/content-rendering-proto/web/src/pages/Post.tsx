@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { AuthorPartial } from "../partials/AuthorPartial";
 import { CategoryPartial } from "../partials/CategoryPartial";
 import {ContentRenderer} from '../content/ContentRenderer';
+import {Container, ContainerItem, Heading1, Heading2} from 'geta-core';
 
 export interface IPostProps {}
 
@@ -13,16 +14,18 @@ export const Post: React.FC<IPostProps> = (props: IPostProps) => {
 
   return (
     <div className={"post"}>
-      <h1>Post - {post.title}</h1>
-      <img src={post.mainImage.asset.url} alt={post.mainImageAlt} />
+      <Heading1>Post - {post.title}</Heading1>
+      <img className={'img'} src={post.mainImage.asset.url} alt={post.mainImageAlt} />
       <ContentRenderer content={post.content}/>
-      <h2>Categories</h2>
-      <ul>
+      <Heading2>Categories</Heading2>
+      <Container>
         {post.categories.map((c, i) => (
-            <CategoryPartial key={i} {...c} />
+            <ContainerItem key={i}>
+                <CategoryPartial key={i} {...c} />
+            </ContainerItem>
         ))}
-      </ul>
-      <h2>Author</h2>
+      </Container>
+      <Heading2>Author</Heading2>
       <AuthorPartial {...post.author} />
     </div>
   );

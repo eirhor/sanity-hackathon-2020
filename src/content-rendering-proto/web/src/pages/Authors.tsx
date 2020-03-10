@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useAuthors } from "../data/hooks/use-authors";
 import {AuthorPartial} from '../partials/AuthorPartial';
+import {Container, ContainerItem, Heading1} from 'geta-core';
 
 interface IAuthorsProps {}
 
@@ -9,12 +10,14 @@ export const Authors: React.FC<IAuthorsProps> = (props?: IAuthorsProps) => {
 
   return (
       <div className={'authors'}>
-          <h1>Authors</h1>
-          <ul>
+          <Heading1>Authors</Heading1>
+          <Container>
               {authors.map((a, i) => (
-                  <AuthorPartial {...a} />
+                  <ContainerItem>
+                      <AuthorPartial {...a} />
+                  </ContainerItem>
               ))}
-          </ul>
+          </Container>
       </div>
   )
 };

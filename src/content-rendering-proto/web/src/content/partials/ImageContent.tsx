@@ -10,4 +10,4 @@ interface IImageContentProps {
 export const ImageContent: React.FC<IImageContentProps> = ({
   type,
   asset
-}: IImageContentProps) => (<img src={asset.url} alt={type} />);
+}: IImageContentProps) => (<img className={'img'} src={asset.url} alt={type} />);

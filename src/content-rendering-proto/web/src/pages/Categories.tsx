@@ -1,8 +1,7 @@
 import * as React from "react";
 import { useCategories } from "../data/hooks/use-categories";
 import { CategoryPartial } from "../partials/CategoryPartial";
-import { Col } from "geta-core/src/Atoms/Layout/Col/col";
-import { Row } from "geta-core/src/Atoms/Layout/Row/row";
+import {Container, ContainerItem, Heading1} from 'geta-core';
 
 interface ICategoriesProps {}
 
@@ -13,12 +12,14 @@ export const Categories: React.FC<ICategoriesProps> = (
 
   return (
     <div className={"categories"}>
-      <h1>Categories</h1>
-      <Row tag="ul" rowSettings={{small: 1,medium: 2, large: 4}}>
+      <Heading1>Categories</Heading1>
+      <Container>
         {categories.map((c, i) => (
-            <CategoryPartial {...c} key={i}/>
+          <ContainerItem key={i}>
+            <CategoryPartial {...c} />
+          </ContainerItem>
         ))}
-      </Row>
+      </Container>
     </div>
   );
 };

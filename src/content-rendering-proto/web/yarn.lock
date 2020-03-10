@@ -3572,7 +3572,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^3.0.0:
+classnames@^3.0.0, classnames@^3.0.2:
   version "3.0.2"
   resolved "https://getadigital.pkgs.visualstudio.com/_packaging/gecom-npm-registry/npm/registry/classnames/-/classnames-3.0.2.tgz#f5ee8778a94bb40caf9dc0cf54aa1746a312ce5c"
   integrity sha1-9e6HeKlLtAyvncDPVKoXRqMSzlw=
@@ -5624,6 +5624,36 @@ get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
+
+geta-card@^2.0.0-alpha.2:
+  version "2.0.0-alpha.2"
+  resolved "https://getadigital.pkgs.visualstudio.com/_packaging/gecom-npm-registry/npm/registry/geta-card/-/geta-card-2.0.0-alpha.2.tgz#b78b0d970ef0878da0d30cab8ff873b3b29e3c6c"
+  integrity sha1-t4sNlw7wh42g0wyrj/hzs7KePGw=
+  dependencies:
+    "@types/react" "^16.9.23"
+    "@types/react-dom" "^16.9.5"
+    classnames "^3.0.2"
+    geta-core "^2.0.0-alpha.4"
+    react "^16.13.0"
+    react-dom "^16.13.0"
+    tslib "^1.11.0"
+    typescript "^3.8.2"
+
+geta-core@^2.0.0-alpha.3:
+  version "2.0.0-alpha.3"
+  resolved "https://getadigital.pkgs.visualstudio.com/_packaging/gecom-npm-registry/npm/registry/geta-core/-/geta-core-2.0.0-alpha.3.tgz#21e07701e38182435bf9828f7df79809610e99e3"
+  integrity sha1-IeB3AeOBgkNb+YKPffeYCWEOmeM=
+  dependencies:
+    "@types/node" "^13.7.7"
+    "@types/react" "^16.9.23"
+    "@types/react-dom" "^16.9.5"
+    classnames "^3.0.0"
+    immer "^5.3.6"
+    react "^16.13.0"
+    react-dom "^16.13.0"
+    tslib "^1.11.0"
+    typescript "^3.8.2"
+    utility-types "^3.10.0"
 
 geta-core@^2.0.0-alpha.4:
   version "2.0.0-alpha.4"
