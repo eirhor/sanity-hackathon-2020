@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useCategories } from "../data/hooks/use-categories";
 import { CategoryPartial } from "../partials/CategoryPartial";
+import {Container, ContainerItem, Heading1} from 'geta-core';
 
 interface ICategoriesProps {}
 
@@ -11,14 +12,14 @@ export const Categories: React.FC<ICategoriesProps> = (
 
   return (
     <div className={"categories"}>
-      <h1>Categories</h1>
-      <ul>
+      <Heading1>Categories</Heading1>
+      <Container>
         {categories.map((c, i) => (
-          <li key={i}>
+          <ContainerItem key={i}>
             <CategoryPartial {...c} />
-          </li>
+          </ContainerItem>
         ))}
-      </ul>
+      </Container>
     </div>
   );
 };

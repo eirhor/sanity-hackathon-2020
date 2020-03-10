@@ -8,7 +8,5 @@ export const NavigationPartial: React.FC<INavigationPartialProps> = ({
   title,
   path
 }: INavigationPartialProps) => (
-    <li>
-      <Link to={path}>{title}</Link>
-    </li>
+    <Link className={'a'} to={path}>{title}</Link>
 );

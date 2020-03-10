@@ -2,6 +2,7 @@ import * as React from "react";
 import { useStartPage } from "../data/hooks/use-landing";
 import { ContentRenderer } from "../content/ContentRenderer";
 import { PostPartial } from "../partials/PostPartial";
+import {Container, ContainerItem, Heading1, Heading2} from 'geta-core';
 
 interface IHomeProps {}
 
@@ -10,16 +11,16 @@ export const Home: React.FC<IHomeProps> = (props: IHomeProps) => {
 
   return (
     <div className={"home"}>
-      <h1>{startPage.title}</h1>
+      <Heading1>{startPage.title}</Heading1>
       <ContentRenderer content={startPage.content} />
-      <h2>Posts list</h2>
-      <ul>
+      <Heading2>Posts list</Heading2>
+      <Container>
         {startPage.postsList.map((p, i) => (
-          <li key={i}>
+          <ContainerItem key={i}>
             <PostPartial {...p} />
-          </li>
+          </ContainerItem>
         ))}
-      </ul>
+      </Container>
     </div>
   );
 };
