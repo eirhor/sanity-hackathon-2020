@@ -1,5 +1,4 @@
 import * as React from "react";
-import {Thumbnail} from 'react-foundation';
 
 interface IImageContentProps {
   type: string;
@@ -11,4 +10,4 @@ interface IImageContentProps {
 export const ImageContent: React.FC<IImageContentProps> = ({
   type,
   asset
-}: IImageContentProps) => (<Thumbnail src={asset.url} alt={type} />);
+}: IImageContentProps) => (<img src={asset.url} alt={type} />);

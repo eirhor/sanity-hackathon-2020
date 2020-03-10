@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useCategory } from "../data/hooks/use-categories";
 import { usePostsWithCategory } from "../data/hooks/use-posts";
 import { PostPartial } from "../partials/PostPartial";
-import {Cell, Grid} from 'react-foundation';
 
 interface ICategoryProps {}
 
@@ -17,13 +16,13 @@ export const Category: React.FC<ICategoryProps> = (props: ICategoryProps) => {
       <h1>{category.title}</h1>
       <h2>Posts</h2>
         <p>{category.description}</p>
-      <Grid upOnSmall={1} upOnMedium={2}>
+      <ul>
         {posts.map((p, i) => (
-          <Cell key={i}>
+          <li key={i}>
             <PostPartial {...p} />
-          </Cell>
+          </li>
         ))}
-      </Grid>
+      </ul>
     </div>
   );
 };

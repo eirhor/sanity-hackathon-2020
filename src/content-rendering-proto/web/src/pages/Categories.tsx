@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useCategories } from "../data/hooks/use-categories";
 import { CategoryPartial } from "../partials/CategoryPartial";
-import {Menu, MenuItem} from 'react-foundation';
 
 interface ICategoriesProps {}
 
@@ -13,13 +12,13 @@ export const Categories: React.FC<ICategoriesProps> = (
   return (
     <div className={"categories"}>
       <h1>Categories</h1>
-      <Menu isVertical={true}>
+      <ul>
         {categories.map((c, i) => (
-          <MenuItem key={i}>
+          <li key={i}>
             <CategoryPartial {...c} />
-          </MenuItem>
+          </li>
         ))}
-      </Menu>
+      </ul>
     </div>
   );
 };
