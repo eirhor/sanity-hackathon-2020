@@ -6,9 +6,13 @@ interface ICategoryPartialProps extends ICategoryItem {}
 
 export const CategoryPartial: React.FC<ICategoryPartialProps> = ({
   id,
-  title
+  title,
+  mainImage,
+  mainImageAlt
 }: ICategoryPartialProps) => (
     <li>
-      <Link to={`/categories/${id}`}>{title}</Link>
+      <Link to={`/categories/${id}`}>
+        <img src={mainImage.asset.url} alt={mainImageAlt}/>
+        {title}</Link>
     </li>
 );
