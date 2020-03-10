@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "SvgComponents": ["node_modules/geta-core/src/Atoms/Icon/SvgComponents"]
+    }
+  }
+}

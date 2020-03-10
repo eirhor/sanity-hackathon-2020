@@ -9,8 +9,6 @@ import { Author } from "./pages/Author";
 import { Authors } from "./pages/Authors";
 import { useNavigation } from "./data/hooks/use-navigation";
 import { NavigationPartial } from "./partials/NavigationPartial";
-import {Menu} from 'react-foundation';
-import './index.css';
 
 const App: React.FC = () => {
   const [navigationItems] = useNavigation();
@@ -18,7 +16,7 @@ const App: React.FC = () => {
   return (
     <div className={'app'}>
       <Router>
-          <Menu>
+          <ul>
             {navigationItems
                 .sort((a, b) => {
                   return a.order - b.order;
@@ -26,7 +24,7 @@ const App: React.FC = () => {
                 .map((n, i) => (
                     <NavigationPartial key={i} {...n} />
                 ))}
-          </Menu>
+          </ul>
           <Switch>
             <Route path={`/categories/:categoryId`}>
               <Category />

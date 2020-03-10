@@ -2,7 +2,6 @@ import * as React from "react";
 import { useStartPage } from "../data/hooks/use-landing";
 import { ContentRenderer } from "../content/ContentRenderer";
 import { PostPartial } from "../partials/PostPartial";
-import {Cell, Grid} from 'react-foundation';
 
 interface IHomeProps {}
 
@@ -14,13 +13,13 @@ export const Home: React.FC<IHomeProps> = (props: IHomeProps) => {
       <h1>{startPage.title}</h1>
       <ContentRenderer content={startPage.content} />
       <h2>Posts list</h2>
-      <Grid upOnSmall={1} upOnMedium={2}>
+      <ul>
         {startPage.postsList.map((p, i) => (
-          <Cell key={i}>
+          <li key={i}>
             <PostPartial {...p} />
-          </Cell>
+          </li>
         ))}
-      </Grid>
+      </ul>
     </div>
   );
 };

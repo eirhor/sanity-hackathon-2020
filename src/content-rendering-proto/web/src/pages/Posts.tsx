@@ -1,7 +1,6 @@
 import * as React from "react";
 import { usePosts } from "../data/hooks/use-posts";
 import { PostPartial } from "../partials/PostPartial";
-import {Cell, Grid} from 'react-foundation';
 
 interface IPostsProps {}
 
@@ -11,13 +10,13 @@ export const Posts: React.FC<IPostsProps> = (props: IPostsProps) => {
   return (
     <div className={"posts"}>
       <h1>Posts</h1>
-      <Grid upOnSmall={1} upOnMedium={2}>
+      <ul>
         {posts.map((p, i) => (
-          <Cell key={i}>
+          <li key={i}>
             <PostPartial {...p} />
-          </Cell>
+          </li>
         ))}
-      </Grid>
+      </ul>
     </div>
   );
 };

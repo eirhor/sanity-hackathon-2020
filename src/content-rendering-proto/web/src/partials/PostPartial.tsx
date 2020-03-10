@@ -1,7 +1,6 @@
 import * as React from "react";
 import { IPostItem } from "../data/hooks/use-posts";
 import { Link } from "react-router-dom";
-import {MediaObject, MediaObjectSection, Thumbnail} from 'react-foundation';
 
 interface IPostPartialProps extends IPostItem {
 }
@@ -12,13 +11,13 @@ export const PostPartial: React.FC<IPostPartialProps> = ({
   mainImage
 }: IPostPartialProps) => (
     <Link to={`/posts/${id}`}>
-        <MediaObject stackForSmall={true}>
-            <MediaObjectSection isMiddle={true}>
-                <Thumbnail src={mainImage.asset.url} alt={title} />
-            </MediaObjectSection>
-            <MediaObjectSection isMain={true}>
+        <section>
+            <div>
+                <img src={mainImage.asset.url} alt={title} />
+            </div>
+            <div>
                 <h4>{title}</h4>
-            </MediaObjectSection>
-        </MediaObject>
+            </div>
+        </section>
     </Link>
 );
