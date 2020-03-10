@@ -1,0 +1,11 @@
+.app {
+    max-width: 67.5em;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.app .navigation {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}

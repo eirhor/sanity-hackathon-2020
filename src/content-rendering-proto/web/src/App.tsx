@@ -10,13 +10,15 @@ import { Authors } from "./pages/Authors";
 import { useNavigation } from "./data/hooks/use-navigation";
 import { NavigationPartial } from "./partials/NavigationPartial";
 
+import './app.style.css';
+
 const App: React.FC = () => {
   const [navigationItems] = useNavigation();
 
   return (
     <div className={'app'}>
       <Router>
-          <ul>
+          <ul className="navigation">
             {navigationItems
                 .sort((a, b) => {
                   return a.order - b.order;
