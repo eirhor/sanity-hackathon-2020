@@ -10,6 +10,7 @@ import { Authors } from "./pages/Authors";
 import { useNavigation } from "./data/hooks/use-navigation";
 import { NavigationPartial } from "./partials/NavigationPartial";
 import {Menu} from 'react-foundation';
+import './index.css';
 
 const App: React.FC = () => {
   const [navigationItems] = useNavigation();
