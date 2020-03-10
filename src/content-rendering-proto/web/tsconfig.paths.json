@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "SvgComponents": ["node_modules/geta-core/src/Atoms/Icon/SvgComponents"]
+      "SvgComponents": ["node_modules/geta-core/src/Atoms/Icon/SvgComponents"],
+      "Anchor": ["node_modules/geta-core/src/Atoms/Anchor/Anchor"]
     }
   }
 }

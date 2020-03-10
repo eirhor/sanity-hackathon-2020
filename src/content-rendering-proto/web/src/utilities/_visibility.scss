@@ -1,0 +1,41 @@
+// @note Define sitename at this point only if it wasn't defined previously, so the build process doesn't break.
+$sitename: '' !default;
+
+// Hides element containing `u-hidden` class or a site-specific class. e.g. `u-hidden--swix`
+// This allows us to have minimal layout differences and show/hide additional content without changing the codebase.
+// It is meant to be used with caution as most often it is not needed.
+.u-hidden {
+    display: none !important;
+
+    @if $sitename != '' {
+        &--#{$sitename} {
+            display: none !important;
+        }
+    }
+}
+
+.u-hidden-mobile {
+    @include breakpoint(medium, down) {
+        display: none !important;
+    }
+}
+
+.u-hidden-desktop {
+    @include breakpoint(large) {
+        display: none !important;
+    }
+}
+
+.u-hidden-print {
+    @media print {
+        display: none !important;
+    }
+}
+
+// Hides element which should be visible only on specific sites.
+// Used on shared layout codebase to show elements only on listed sites.
+[class*='u-visible--'] {
+    &:not(.u-visible--#{$sitename}) {
+        display: none !important;
+    }
+}

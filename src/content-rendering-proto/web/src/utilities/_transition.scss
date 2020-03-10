@@ -1,0 +1,17 @@
+@mixin transition($targets...) {
+    $response: null;
+
+    @each $target in $targets {
+        @if ($response == null) {
+            $response: $target $transition-speed $transition-type;
+        }
+
+        @else {
+            $response: $response, $target $transition-speed $transition-type;
+        }
+    }
+
+    @if ($response != null) {
+        transition: $response;
+    }
+}

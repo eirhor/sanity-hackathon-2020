@@ -1,0 +1,55 @@
+/* stylelint-disable */
+
+$scopes: (
+    only: only,
+    up: up,
+    down: down,
+);
+
+@mixin breakpoint($point, $scope: map_get($scopes, up)) {
+    $smallest-breakpoint-name: nth(first($breakpoints), 1);
+    $largest-breakpoint-name: nth(last($breakpoints), 1);
+    $prev-value: 0;
+
+    @each $name, $value in $breakpoints {
+        @if $point == $name {
+            @if $scope == map_get($scopes, only) {
+                $media-query: "only screen and (min-width: #{$prev-value}px) and (max-width: #{$value - 1}px)";
+
+                @if ($smallest-breakpoint-name == $point) {
+                    // Don't add min-width on the smallest breakpoint.
+                    $media-query: "only screen and (max-width: #{$value - 1}px)";
+                } @else if ($largest-breakpoint-name == $point) {
+                    // Don't add max-width on the largest breakpoint.
+                    $media-query: "only screen and (min-width: #{$prev-value}px)";
+                }
+
+                @media #{unquote($media-query)} {
+                    @content;
+                }
+            }
+
+            @else if $scope == map_get($scopes, down) {
+                @media only screen and (max-width: #{$value - 1}px) {
+                    @content;
+                }
+            }
+
+            @else {
+                // On smallest resolution, we can skip min-width: 0px media query wrapper.
+                @if $prev-value == 0 {
+                    @content
+                }
+
+                @else {
+                    @media only screen and (min-width: #{$prev-value}px) {
+                        @content;
+                    }
+                }
+            }
+        }
+
+        $prev-value: $value;
+    }
+}
+/* stylelint-enable */

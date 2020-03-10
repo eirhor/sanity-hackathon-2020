@@ -1,0 +1,20 @@
+/**
+ * Cuts text off as with `text-overflow: ellipsis` but based on number of rows.
+ * To support other browsers, provide fallback height (usually ($font-size * $line-height) * $rows).
+ * e.g. (1em * 1.2) * 2 rows = 2.4em
+ *
+ * @see https://caniuse.com/#search=line-clamp
+ * @see https://css-tricks.com/almanac/properties/l/line-clamp/
+ */
+@mixin line-clamp($rows, $fallback-height: null) {
+    /* autoprefixer: off */
+    display: -webkit-box;
+    -webkit-line-clamp: $rows;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @if ($fallback-height) {
+        // Fallback for non-supporting browsers.
+        max-height: $fallback-height;
+    }
+}

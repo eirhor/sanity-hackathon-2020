@@ -1,0 +1,84 @@
+$triangle__dimension:           10px !default;
+
+$supported-directions:          'top', 'right', 'bottom', 'left';
+
+@mixin generate-triangle-position($direction: 'top') {
+    @if ($direction == 'top') {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @else if ($direction == 'right') {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @else if ($direction == 'bottom') {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @else if ($direction == 'left') {
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @else {
+        @error "Wrong direction provided";
+    }
+}
+
+@mixin generate-triangle-border($direction: 'top', $dimension: 10px, $shorter-dimension: $dimension / 2) {
+    $border-width: null;
+    $border-color: null;
+
+    @if ($direction == 'top') {
+        $border-width: 0 $shorter-dimension $dimension $shorter-dimension;
+        $border-color: transparent transparent currentColor transparent;
+    }
+
+    @else if ($direction == 'right') {
+        $border-width: $shorter-dimension 0 $shorter-dimension $dimension;
+        $border-color: transparent transparent transparent currentColor;
+    }
+
+    @else if ($direction == 'bottom') {
+        $border-width: $dimension $shorter-dimension 0 $shorter-dimension;
+        $border-color: currentColor transparent transparent transparent;
+    }
+
+    @else if ($direction == 'left') {
+        $border-width: $shorter-dimension $dimension $shorter-dimension 0;
+        $border-color: transparent currentColor transparent transparent;
+    }
+
+    @else {
+        @error "Wrong direction provided";
+    }
+    border-width: $border-width;
+    border-color: $border-color;
+}
+
+.triangle {
+    &:after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        color: $color__light;
+    }
+
+    @each $direction in $supported-directions {
+        &--#{$direction} {
+            &:after {
+                @include generate-triangle-position($direction);
+                @include generate-triangle-border($direction, $triangle__dimension);
+            }
+        }
+    }
+}

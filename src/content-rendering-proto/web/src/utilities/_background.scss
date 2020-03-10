@@ -1,0 +1,35 @@
+$background__colors: (
+    black: #000,
+    green: #4fab5b,
+    yellow: #ff6,
+    white: #fff,
+    red: #df541e,
+    orange: #f9ae34,
+    blue: #0450fb,
+    grey: #ccc,
+    lime: #58fcc1,
+) !default;
+
+$background__fallback__shade-1:        #eee;
+$background__fallback__shade-2:        #ddd;
+
+// Fallback for colors which we haven't defined in meantime.
+[class*=u-background-] {
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            $background__fallback__shade-1,
+            $background__fallback__shade-1 5px,
+            $background__fallback__shade-2 5px,
+            $background__fallback__shade-2 10px
+        );
+}
+
+.u-background- {
+    @each $name, $value in $background__colors {
+        &#{$name} {
+            background: $value;
+            color: color-yiq($value);
+        }
+    }
+}

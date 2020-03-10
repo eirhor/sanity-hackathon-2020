@@ -5625,10 +5625,10 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
-geta-core@^2.0.0-alpha.2:
-  version "2.0.0-alpha.2"
-  resolved "https://getadigital.pkgs.visualstudio.com/_packaging/gecom-npm-registry/npm/registry/geta-core/-/geta-core-2.0.0-alpha.2.tgz#1436868bb1ef8b4019fd7eb65c48d2c7038e76ad"
-  integrity sha1-FDaGi7Hvi0AZ/X62XEjSxwOOdq0=
+geta-core@^2.0.0-alpha.3:
+  version "2.0.0-alpha.3"
+  resolved "https://getadigital.pkgs.visualstudio.com/_packaging/gecom-npm-registry/npm/registry/geta-core/-/geta-core-2.0.0-alpha.3.tgz#21e07701e38182435bf9828f7df79809610e99e3"
+  integrity sha1-IeB3AeOBgkNb+YKPffeYCWEOmeM=
   dependencies:
     "@types/node" "^13.7.7"
     "@types/react" "^16.9.23"
