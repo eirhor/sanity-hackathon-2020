@@ -11,7 +11,7 @@ import { useNavigation } from "./data/hooks/use-navigation";
 import { NavigationPartial } from "./partials/NavigationPartial";
 import {Container, ContainerItem} from 'geta-core';
 
-import './app.style.css';
+import './app.style.scss';
 
 const App: React.FC = () => {
   const [navigationItems] = useNavigation();
