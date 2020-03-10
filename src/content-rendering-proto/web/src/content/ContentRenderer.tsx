@@ -18,7 +18,7 @@ export const ContentRenderer: React.FC<IContentRendererProps> = ({
         }
 
         return (
-            <Comp {...c} />
+            <Comp key={i} {...c} />
         );
       })}
     </>
