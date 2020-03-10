@@ -32,6 +32,11 @@ export default {
       }
     },
     {
+      name: 'mainImageAlt',
+      title: 'Alt Text',
+      type: 'string',
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
